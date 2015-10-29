@@ -1,65 +1,25 @@
 {
-  "name": "hubot-slack",
-  "version": "3.4.1",
-  "description": "A Slack adapter for hubot",
-  "main": "./index",
-  "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register --reporter spec"
-  },
-  "keywords": [
-    "hubot",
-    "tinyspeck",
-    "adapter",
-    "slack"
-  ],
-  "author": "Slack Technologies, Inc.",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/slackhq/hubot-slack.git"
-  },
-  "bugs": {
-    "url": "https://github.com/slackhq/hubot-slack/issues"
-  },
+  "name": "supplybot",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Justin Reese <justin.x.reese@gmail.com>",
+  "description": "The Code & Supply helper bot",
   "dependencies": {
-    "slack-client": "~1.4.0"
-  },
-  "devDependencies": {
-    "coffee-script": "~1.7.1",
-    "grunt": "~0.4.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-release": "~0.6.0",
-    "should": "~2.0.2",
-    "mocha": "~1.13.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-shell": "~0.5.0",
-    "hubot": "~2.11"
+    "hubot": "^2.16.0",
+    "hubot-diagnostics": "0.0.1",
+    "hubot-google-images": "^0.2.2",
+    "hubot-google-translate": "^0.2.0",
+    "hubot-help": "^0.1.2",
+    "hubot-heroku-keepalive": "^1.0.0",
+    "hubot-maps": "0.0.2",
+    "hubot-pugme": "^0.1.0",
+    "hubot-redis-brain": "0.0.3",
+    "hubot-rules": "^0.1.1",
+    "hubot-scripts": "^2.16.2",
+    "hubot-shipit": "^0.2.0",
+    "hubot-slack": "^3.4.1"
   },
   "engines": {
-    "node": ">=0.4.7",
-    "npm": ">= 1.1.x"
-  },
-  "contributors": [
-    {
-      "name": "Myles Grant",
-      "email": "myles@tinyspeck.com"
-    },
-    {
-      "name": "Evan Solomon"
-    },
-    {
-      "name": "Jon Dalberg"
-    },
-    {
-      "name": "Patrick Connolly"
-    },
-    {
-      "name": "Chip Hayner",
-      "email": "chayner@centresource.com"
-    },
-    {
-      "name": "Eric Lindvall",
-      "email": "eric@papertrailapp.com"
-    }
-  ]
+    "node": "0.10.x"
+  }
 }
