@@ -1,7 +1,8 @@
 module.exports = (robot) ->
   store_the_thing = (thing) ->
     previous = robot.brain.get 'remembered'
-    thing = previous + '\n' + thing
+    if previous != null
+      thing = previous + '\n' + thing
     robot.brain.set 'remembered', thing
 
   robot.respond /recall (.*) later/i, (msg) ->
