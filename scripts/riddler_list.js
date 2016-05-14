@@ -26,7 +26,6 @@ module.exports = function(robot) {
     
     return robot.respond(/list/i, function(msg) { // returns next 5 events
 	return msg.http("http://jim.booleanparty.pagekite.me/api/v1/events.json").get()(function(err, res, body) {
-	    console.log(body);
 	    var json = JSON.parse(body);
 
             return msg.send("Next five C&S events:\n" + nextFiveEvents(json).join('\n'));
