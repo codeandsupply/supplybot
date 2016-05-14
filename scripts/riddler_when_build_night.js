@@ -1,7 +1,7 @@
 _ = require('lodash/fp');
+var eventsUrl = process.env.EVENTS_URL;
 
 module.exports = function(robot) {
-    var eventsUrl            = process.env.EVENTS_URL;
     var titleOf              = function(e) { return e.title };
     var dateOf               = function(e) { return e.date };
     var locationOf           = function(e) { return e.location || "(location not set)" };
@@ -33,7 +33,7 @@ module.exports = function(robot) {
     var nextBuildNight       = _.flow(dateFilter, dateSorted, ensureFindBuildNight);
 
     return robot.hear(/build night/i, function(msg) { // returns when/where of build night
-	return msg.http("http://jim.booleanparty.pagekite.me/api/v1/events.json").get()(function(err, res, body) {
+	return msg.http(eventsUrl).get()(function(err, res, body) {
 	    var json = JSON.parse(body);
 
             return msg.send(nextBuildNight(json));
