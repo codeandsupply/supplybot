@@ -1,6 +1,7 @@
 _ = require('lodash/fp');
 
 module.exports = function(robot) {
+    var eventsUrl            = process.env.EVENTS_URL;
     var titleOf              = function(e) { return e.title || "(title undecided)" };
     var dateOf               = function(e) { return e.date || "(date not set)" };
     var locationOf           = function(e) { return e.location || "(location not set)" };
@@ -28,7 +29,7 @@ module.exports = function(robot) {
     var nextOneEvent         = _.flow(dateSorted, firstOneOf, titleDateLocationIn, joinedNextOneEvent);
     
     return robot.respond(/next up/i, function(msg) { // returns next 1 event
-	return msg.http("http://jim.booleanparty.pagekite.me/api/v1/events.json").get()(function(err, res, body) {
+	return msg.http(eventsUrl).get()(function(err, res, body) {
 	    var json = JSON.parse(body);
 	    
 	    return msg.send("Next C&S event: " + nextOneEvent(json));

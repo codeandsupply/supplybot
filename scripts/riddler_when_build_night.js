@@ -1,7 +1,7 @@
 _ = require('lodash/fp');
 
 module.exports = function(robot) {
-
+    var eventsUrl            = process.env.EVENTS_URL;
     var titleOf              = function(e) { return e.title };
     var dateOf               = function(e) { return e.date };
     var locationOf           = function(e) { return e.location || "(location not set)" };
