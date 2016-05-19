@@ -1,6 +1,7 @@
 _ = require('lodash/fp');
 var eventsUrl = process.env.EVENTS_URL;
 
+
 module.exports = function(robot) {
     var titleOf              = function(e) { return e.title || "(title undecided)" };
     var dateOf               = function(e) { return e.date };
