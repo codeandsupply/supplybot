@@ -4,7 +4,7 @@ var eventsUrl = process.env.EVENTS_URL;
 
 module.exports = function(robot) {
     var titleOf              = function(e) { return e.title || "(title undecided)"; };
-    var dateOf               = function(e) { return e.date };
+    var dateOf               = function(e) { return e.date; };
     var locationOf           = function(e) { return e.location || "(location not set)"; };
     var firstFiveOf          = _.take(5);
     var dateSorted           = _.sortBy(function(e) { return e.date; });
@@ -27,7 +27,8 @@ module.exports = function(robot) {
     var nextFiveEvents       = _.flow(dateSorted, firstFiveOf, titleDateLocationIn, joinedNextFiveEvents);
     
     return robot.respond(/list/i, function(msg) { // returns next 5 events
-	return msg.http(eventsUrl).get()(function(err, res, body) {
+	return msg.http('http://cs-riddler.herokuapp.com/api/v1/events.json').get()(function(err, res, body) {
+	    console.log(body);
 	    var json = JSON.parse(body);
 
             return msg.send("Next five C&S events:\n" + nextFiveEvents(json).join('\n'));
