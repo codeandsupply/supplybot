@@ -36,11 +36,11 @@ module.exports = function(robot) {
     var concatBuildNight     = function(e) { return "Build Night is on " + formatDate(dateOf(e)) + ", " + locationOf(e); };
     var nextBuildNight       = _.flow(dateFilter, dateSorted, ensureFindBuildNight);
 
-    return robot.hear(/build night/i, function(msg) { // returns when/where of build night
-	return msg.http(eventsUrl).get()(function(err, res, body) {
-	    var json = JSON.parse(body);
+    //return robot.hear(/build night/i, function(msg) { // returns when/where of build night
+	//return msg.http(eventsUrl).get()(function(err, res, body) {
+	//    var json = JSON.parse(body);
 
-            return msg.send(nextBuildNight(json));
-	});
-    });
+    //        return msg.send(nextBuildNight(json));
+	//});
+    //});
 };
