@@ -1,11 +1,12 @@
 var enterReplies;
 
 enterReplies = ['Hi!', 'Welcome!', 'Hello there!', 'Hello, friend!'];
+welcomePrompts = ["What's your favorite color?", "Do you have a favorite programming language?", "Do you like ketchup?"];
 
 module.exports = function(robot) {
   return robot.enter(function(res) {
-    res.send('Someone new! '+res.random(enterReplies));
-    res.send('Be sure to familiarize yourself with our conduct policies, there should be a link in the header.');
-    return res.send('Happy to have you here! Everyone welcome our new friend.');
+    res.send('Someone new! '+res.random(enterReplies)+' Everyone say hi! :wave:');
+    res.send('If you haven\'t read them yet, our conduct policies are linked in the channel title.');
+    return res.send('Happy to have you here! '+res.random(welcomePrompts));
   });
 };
