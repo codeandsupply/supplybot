@@ -1,7 +1,7 @@
 var enterReplies;
 
 enterReplies = ['Hi!', 'Welcome!', 'Hello there!', 'Hello, friend!'];
-welcomePrompts = ["What's your favorite color?", "Do you have a favorite programming language?", "Do you like ketchup?"];
+welcomePrompts = ["What's your favorite color?", "Do you have a favorite programming language?", "Do you like ketchup?", "What is your favorite car?" , "Where are you from?"];
 
 module.exports = function(robot) {
   return robot.enter(function(res) {
