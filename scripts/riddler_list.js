@@ -29,21 +29,21 @@ module.exports = function(robot) {
 	};
     };
     var scheduleCarpool      = _.map(function(e) {
-        if (e.date !== undefined) {
-            var parse = e.date.substring(0, e.date.length-5);
-            var eventDate = new Date(parse);
-            var carDate = new Date(parse);
-            carDate.setHours(carDate.getHours() - 3);
-            now  = new Date();
-            if(now < eventDate) {
-                if(carDate < now) {
-                    carDate = new Date();
-                    carDate.setSeconds(carDate.getSeconds() + 1);
-                }
-                schedule.scheduleJob(carDate, announceCarpool);
+    if (e.date !== undefined) {
+        var parse = e.date.substring(0, e.date.length-5);
+        var eventDate = new Date(parse);
+        var carDate = new Date(parse);
+        carDate.setHours(carDate.getHours() - 3);
+        now  = new Date();
+        if(now < eventDate) {
+            if(carDate < now) {
+                carDate = new Date();
+                carDate.setSeconds(carDate.getSeconds() + 1);
             }
+            schedule.scheduleJob(carDate, announceCarpool);
         }
-        return e;
+    }
+    return e;
     });
     var announceCarpool = function(){ announcer.send("Don't forget about the #carpool channel if anyone needs a ride to the upcoming event!"); }
     var joinedNextFiveEvents = _.map(_.join(', '));
@@ -52,9 +52,8 @@ module.exports = function(robot) {
     return robot.respond(/list/i, function(msg) { // returns next 5 events
     announcer = msg;
 	return msg.http(eventsUrl).get()(function(err, res, body) {
-	    var json = JSON.parse('[{ "title":"Tester yay","date":"2016-10-30T10:44:00:000Z" },{ "title":"Tester 2","date":"2016-10-29T23:56:00:000Z" },{ "title":"Tester yay","date":"2016-10-29T23:54:00:000Z" },{ "title":"Tester yay","date":"2016-10-29T23:54:00:000Z" },{ "title":"Tester yay","date":"2016-10-29T23:54:00:000Z" }]');
-
-            return msg.send("Next five C&S events:\n" + nextFiveEvents(json).join('\n'));
+        var json = JSON.parse(body);
+        return msg.send("Next five C&S events:\n" + nextFiveEvents(json).join('\n'));
 	});
     });
 };
