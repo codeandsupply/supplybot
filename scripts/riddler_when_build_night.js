@@ -5,7 +5,7 @@ module.exports = function (robot) {
   var now;
   var titleOf = function (e) { return e.title; };
   var dateOf = function (e) { return e.date; };
-  var locationOf = function (e) { return e.location || "(location not set)"; };
+  var locationOf = function (e) { return e.venue_name || "(location not set)"; };
   var dateSorted = _.sortBy(dateOf);
   var dateFilter = _.filter(function (event) { return (event.date !== null); });
   var findBuildNight = _.find(function (e) {
