@@ -1,12 +1,10 @@
-var enterReplies;
-
-enterReplies = [
+var enterReplies = [
 	'Hi!',
 	'Welcome!',
 	'Hello there!',
 	'Hello, friend!'
 ];
-welcomePrompts = [
+var welcomePrompts = [
     "What's your favorite color?",
     "Do you have a favorite programming language?",
     "Do you like ketchup?",
