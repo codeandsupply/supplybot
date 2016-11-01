@@ -20,7 +20,8 @@
     "hubot-scripts": "^2.17.1",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.2",
-    "lodash": "^4.12.0"
+    "lodash": "^4.12.0",
+    "node-schedule": "^1.2.0"
   },
   "engines": {
     "node": "0.10.x"
