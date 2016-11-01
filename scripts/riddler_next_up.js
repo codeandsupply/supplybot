@@ -11,7 +11,7 @@ module.exports = function(robot) {
     var datesIn              = _.map(dateOf);
     var locationsIn          = _.map(locationOf);
     var dateSorted           = _.sortBy(function(e) { return Date.parse(e.date); });
-    var dropPast             = _.dropWhile(function(e) { return currentEpoch() > Date.parse(e.date); });
+    var dropPast             = _.dropWhile(function(e) { return e == NaN || currentEpoch() > Date.parse(e.date); });
     var titleDateLocationIn  = _.map(function(e) { return [titleOf(e), dateOf(e), locationOf(e)]; });
     var regexDate            = function(date) { return /(\d+).(\d+).(\d+).(\d+).(\d+)/.exec(date); };
     var formatDate           = function(date) {
