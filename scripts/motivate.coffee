@@ -23,4 +23,4 @@ module.exports = (robot) ->
     msg.send motivate user
 
   robot.hear /\!m \*/i, (msg) ->
-    msg.send motivate msg.message.room
+    msg.send motivate "##{msg.message.room}"
