@@ -1,0 +1,26 @@
+{
+  "noevents": [],
+  "nobuildnights": [
+    {
+      "id": 1,
+      "status": "finalized",
+      "description": "Description",
+      "date": "2016-10-20T19:00:00.000Z",
+      "title": "C&S Event"
+    },
+    {
+      "id": 2,
+      "status": "finalized",
+      "description": "Description",
+      "date": "2016-09-01T19:00:00.000Z",
+      "title": "C&S Event 2"
+    },
+    {
+      "id": 3,
+      "status": "finalized",
+      "description": "Description",
+      "date": "2016-01-20T19:00:00.000Z",
+      "title": "C&S Event 3"
+    }
+  ]
+}
