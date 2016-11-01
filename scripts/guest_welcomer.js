@@ -24,7 +24,8 @@ welcomePrompts = [
     "Do you like to run?",
     "Do you like cheeseburgers?",
     "Have you ever been skydiving?",
-    "Do you like coffee?"
+    "Do you like coffee?",
+    "Do you speak any languages other than English? If so, what?"
 ];
 
 module.exports = function(robot) {
