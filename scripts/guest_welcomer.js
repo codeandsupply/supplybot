@@ -14,7 +14,7 @@ welcomePrompts = [
     "Where are you from?",
     "What's your favorite movie?",
     "What are your hobbies?",
-    "What’s your hidden talent?",
+    "What's your hidden talent?",
     "Which animal would you choose to be?",
     "What is your favorite book?",
     "Which time period would you visit in history?",
@@ -30,7 +30,7 @@ welcomePrompts = [
 module.exports = function(robot) {
   return robot.enter(function(res) {
     res.send('Someone new! '+res.random(enterReplies)+' Everyone say hi! :wave:');
-    res.send('If you haven\'t read them yet, our conduct policies are linked in the channel title.');
+    res.send("If you haven't read them yet, our conduct policies are linked in the channel title.");
     return res.send('Happy to have you here! '+res.random(welcomePrompts));
   });
 };
