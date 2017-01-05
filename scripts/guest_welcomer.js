@@ -29,7 +29,8 @@ var welcomePrompts = [
 module.exports = function(robot) {
   return robot.enter(function(res) {
     res.send('Someone new! '+res.random(enterReplies)+' Everyone say hi! :wave:');
-    res.send("If you haven't read them yet, our conduct policies are linked in the channel title.");
+    res.send("Our conduct policies are linked in the channel title.");
+    res.send("If you ever have an issue, leave a message in #feedback or contact an admin privately (j​ustinxreese, e​mdantrim, c​olindean).");
     return res.send('Happy to have you here! '+res.random(welcomePrompts));
   });
 };
