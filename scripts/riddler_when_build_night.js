@@ -40,7 +40,10 @@ module.exports = function (robot) {
   var concatBuildNight = function (e) { return "Build Night is on " + formatDate(dateOf(e)) + ", " + locationOf(e); };
   var nextBuildNight = _.flow(dateFilter, dateSorted, ensureFindBuildNight);
 
-  return robot.hear(/build night/i, function (msg) { // returns when/where of build night
+  return robot.hear(/(when|where)\b(.*?)\b(build night)/i, function (msg) { // returns when/where of build night
+    if(msg.channel == 'jobs') {
+      return;
+    }
     if (!eventsUrl) {
       msg.send('Please set the EVENTS_URL environment variable.');
       return;
