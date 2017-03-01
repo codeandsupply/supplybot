@@ -1,5 +1,6 @@
 _ = require('lodash/fp');
 var eventsUrl = process.env.EVENTS_URL;
+const buildNightChannels = ['chat','buildnight']
 
 module.exports = function (robot) {
   var now;
@@ -41,7 +42,7 @@ module.exports = function (robot) {
   var nextBuildNight = _.flow(dateFilter, dateSorted, ensureFindBuildNight);
 
   return robot.hear(/(when|where)\b(.*?)\b(build night)/i, function (msg) { // returns when/where of build night
-    if(msg.channel == 'jobs') {
+    if(buildNightChannels.indexOf(msg.channel) === -1) {
       return;
     }
     if (!eventsUrl) {
