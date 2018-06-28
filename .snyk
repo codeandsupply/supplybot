@@ -35,3 +35,11 @@ patch:
         patched: '2018-06-21T08:42:28.287Z'
     - hubot-slack > @slack/client > request > hawk > cryptiles > boom > hoek:
         patched: '2018-06-21T08:42:28.287Z'
+  'npm:mime:20170907':
+    - hubot > express > send > mime:
+        patched: '2018-06-28T08:57:45.010Z'
+    - hubot > express > connect > serve-static > send > mime:
+        patched: '2018-06-28T08:57:45.010Z'
+  'npm:tunnel-agent:20170305':
+    - hubot-slack > @slack/client > request > tunnel-agent:
+        patched: '2018-06-28T08:57:45.010Z'
