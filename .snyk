@@ -35,3 +35,6 @@ patch:
         patched: '2018-06-21T08:42:28.287Z'
     - hubot-slack > @slack/client > request > hawk > cryptiles > boom > hoek:
         patched: '2018-06-21T08:42:28.287Z'
+  'npm:lodash:20180130':
+    - hubot-slack > lodash:
+        patched: '2018-07-05T08:38:07.105Z'
