@@ -2,7 +2,8 @@ var enterReplies = [
 	'Hi!',
 	'Welcome!',
 	'Hello there!',
-	'Hello, friend!'
+	'Hello, friend!',
+  'Greetings, friend!'
 ];
 var welcomePrompts = [
     "What's your favorite color?",
@@ -28,9 +29,8 @@ var welcomePrompts = [
 
 module.exports = function(robot) {
   return robot.enter(function(res) {
-    res.send('Someone new! '+res.random(enterReplies)+' Everyone say hi! :wave:');
-    res.send("Our conduct policies are required to be followed and available at http://codeandsupply.co/policies/conduct.");
-    res.send("If you ever have an issue, leave a message in #feedback, tag a message with the conduct warning emoji, or contact an admin privately (j ustinxreese, j ennythefabulous, c olindean).");
+    res.send(':wave: :tada:'+res.random(enterReplies)+'Our conduct policies are required to be followed and available at http://codeandsupply.co/policies/conduct.');
+    res.send("If you ever witness misconduct, tag messages with the conduct-warning emoji to notify our #conduct-committee or message them privately");
     return res.send('Happy to have you here! '+res.random(welcomePrompts));
   });
 };
