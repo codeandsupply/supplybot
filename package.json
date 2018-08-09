@@ -5,7 +5,7 @@
   "author": "Justin Reese <justin@codeandsupply.co>",
   "description": "A slackbot for Code & Supply",
   "dependencies": {
-    "hubot": "^2.19.0",
+    "hubot": "^3.1.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.2.6",
     "hubot-google-translate": "^0.2.0",
