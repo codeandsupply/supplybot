@@ -12,5 +12,6 @@
 	"hubot-plusplus",
 	"hubot-murder",
   "hubot-frinkiac",
-  "hubot-sentimental"
+  "hubot-sentimental",
+  "hubot-sentiment"
 ]
