@@ -38,7 +38,7 @@
     "sinon": "~1.9.0"
   },
   "engines": {
-    "node": "6.x.x"
+    "node": "10.x.x"
   },
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script"
