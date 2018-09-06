@@ -24,7 +24,8 @@
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.2",
     "lodash": "^4.12.0",
-    "node-schedule": "^1.2.0"
+    "node-schedule": "^1.2.0",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "chai": "~1.9.0",
