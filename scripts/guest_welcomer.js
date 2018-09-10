@@ -47,10 +47,8 @@ var welcomePrompts = [
 module.exports = function(robot) {
   return robot.enter(function(res) {
     room = msg.message.room
-    if(room == '#chat') {
-      res.send(':wave: :tada:'+res.random(enterReplies)+'Our conduct policies are required to be followed and available at http://codeandsupply.co/policies/conduct.');
-      res.send("If you ever witness misconduct, tag messages with the conduct-warning emoji to notify our #conduct-committee or message them privately");
-      return res.send('Happy to have you here! '+res.random(welcomePrompts));
-    }
+    res.send(':wave: :tada:'+res.random(enterReplies)+'Our conduct policies are required to be followed and available at http://codeandsupply.co/policies/conduct#'+room);
+    res.send("If you ever witness misconduct, tag messages with the conduct-warning emoji to notify our #conduct-committee or message them privately");
+    return res.send('Happy to have you here! '+res.random(welcomePrompts));
   });
 };
