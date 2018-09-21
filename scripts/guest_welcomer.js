@@ -48,7 +48,7 @@ module.exports = function(robot) {
   return robot.enter(function(res) {
     room = res.message.room
     res.send(':wave: :tada:'+res.random(enterReplies)+'Our conduct policies are required to be followed and available at http://codeandsupply.co/policies/conduct#'+room);
-    res.send("If you ever witness misconduct, tag messages with the conduct-warning emoji to notify our #conduct-committee or message them privately");
+    res.send("If you ever witness misconduct, tag messages with the conduct-warning emoji to notify our #-incident-response team or message them privately");
     return res.send('Happy to have you here! '+res.random(welcomePrompts));
   });
 };
